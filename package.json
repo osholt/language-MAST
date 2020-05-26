@@ -1,12 +1,12 @@
 {
   "name": "language-MAST",
-  "version": "0.1.0",
-  "description": "MAST language package",
+  "version": "0.0.0",
+  "description": "MAST grammar support for Atom",
   "keywords": [
     "language",
     "grammar"
   ],
-  "repository": "https://github.com/atom/language-MAST",
+  "repository": "https://github.com/osholt/language-MAST",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
