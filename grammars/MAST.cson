@@ -1,0 +1,70 @@
+# If this is your first time writing a language grammar, check out:
+#   - https://flight-manual.atom.io/hacking-atom/sections/creating-a-grammar/
+
+'scopeName': 'source.MAST'
+'name': 'MAST'
+'fileTypes': [ 'sin', 'dec' ]
+'foldingStartMarker': '\\{\\s*$'
+'foldingStopMarker': '^\\s*\\}'
+'limitLineLength': false
+
+'patterns': [
+  {
+    'comment': 'In line comment'
+    'name': 'comment.line.number-sign.MAST'
+    'begin': '#'
+    'end': '\\n'
+  }
+
+  {
+    'comment': 'String'
+    'name': 'string.quoted.double.MAST'
+    'begin': '"'
+    'end': '"'
+  }
+
+  {
+    'comment': 'Control keywords'
+    'name': 'keyword.control.MAST'
+    'match': '\\b(branch|breakpoint|control_section|element|encrpyted|equations|parameter|parameters|template|values|when|if|then|else|return|component|states|unit|exit|for|neutral|next)\\b'
+  }
+
+  {
+    'comment': 'Operator keywords (functions)'
+    'name': 'keyword.operators.MAST'
+    'match': '\\b(dc_domain|dc_done|dc_help|dc_init|dc_start|freq|freq_domain|freq_mag|freq_phase|next_time|statistical|time|step_size|time_domain|time_init|time_step_done|tr_done|tr_start|abs|acos|acosh|across|addr|adjust_on_restart|asin|asinh|atan|atan2|atanh|collapse|component|conflict_resolution|cos|cosh|d_by_dt|delay|deschedule|design_name|device_type|driven|error|event_on|exp|halt_simulation|initial_condition|instance|int|integer|last_value|len|limexp|ln|log|make|max|message|min|noise_source|pl_set|ramp|random|range_for_unit|range_for_variable|range_set|saber_message|sample_points|schedule_event|schedule_next_time|sign|sin|sinh|slew|small_signal|sqrt|ss_partial|start_value|step_size|stress_measure|tan|tanh|threshold|transfer_function|union_type|warning|worst_case)\\b'
+
+  }
+
+  {
+    'comment': 'Type modifiers'
+    'name': 'keyword.storage.modifier.MAST'
+    'match': '\\b(electrical|flow|hyd_mks|light|magnetic|pneumatic|rotational|rotational_ang|rotational_vel|thermal|thermal_c|nu|thermal_k|translational|translational_pos|translational_vel|logic_3|logic_4|inout|output)\\b'
+
+  }
+
+  {
+    'comment': 'Types'
+    'name': 'keyword.storage.type.MAST'
+    'match': '\\b(ref|val|var|number|pin|state|enum|struc|string|branch|external|branch|foreign|group|simvar|const|export|function|ref|stress_measures|union|unit|type|variable)\\b'
+  }
+
+  {
+    'comment': 'Language constants'
+    'name': 'constant.language.MAST'
+    'match': '\\b(inf|undef)\\b'
+  }
+
+    {
+      'comment': 'Variable'
+      'name': 'variable.MAST'
+      'match': '[a-zA-Z_%@][a-zA-Z0-9_?]*'
+    }
+
+      {
+        'comment': 'Numberic litteral'
+        'name': 'constant.numeric.MAST'
+        'match': '/^  [+-]? ( (\\d+ (\\.\\d*)?)  |  (\\.\\d+) ) $/'
+      }
+
+]
